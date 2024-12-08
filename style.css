@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+:root {
+  --bg-gradient-light: linear-gradient(135deg, #ffd1dc 0%, #ffb6c1 100%);
+  --bg-gradient-dark: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  --text-color-light: #ff69b4;
+  --text-color-dark: #7ec6ff;
+  --input-bg-light: rgba(255, 255, 255, 0.9);
+  --input-bg-dark: rgba(30, 30, 30, 0.9);
+  --button-gradient-light: linear-gradient(45deg, #ff69b4, #ffb6c1);
+  --button-gradient-dark: linear-gradient(45deg, #3498db, #2980b9);
+  --li-bg-light: rgba(255, 255, 255, 0.9);
+  --li-bg-dark: rgba(40, 40, 40, 0.9);
+  --li-border-light: #ff69b4;
+  --li-border-dark: #3498db;
+  --completed-bg-light: rgba(200, 200, 200, 0.9);
+  --completed-bg-dark: rgba(60, 60, 60, 0.9);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: var(--bg-gradient-light);
+  min-height: 100vh;
+  transition: background 0.3s ease;
+}
+
+body.dark-mode {
+  background: var(--bg-gradient-dark);
+}
+
+h1 {
+  color: var(--text-color-light);
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(255, 182, 193, 0.3);
+  animation: fadeIn 1s ease-in;
+}
+
+.dark-mode h1 {
+  color: var(--text-color-dark);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+input[type="text"] {
+  padding: 12px;
+  width: 70%;
+  border: none;
+  border-radius: 8px;
+  margin-right: 10px;
+  background-color: var(--input-bg-light);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(255, 182, 193, 0.2);
+}
+
+.dark-mode input[type="text"] {
+  background-color: var(--input-bg-dark);
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"]:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 182, 193, 0.4);
+  outline: none;
+}
+
+.dark-mode input[type="text"]:focus {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+button {
+  padding: 12px 25px;
+  background: var(--button-gradient-light);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(255, 182, 193, 0.2);
+}
+
+.dark-mode button {
+  background: var(--button-gradient-dark);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 182, 193, 0.4);
+  background: linear-gradient(45deg, #ffb6c1, #ff69b4);
+}
+
+.dark-mode button:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(45deg, #2980b9, #3498db);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  background: var(--li-bg-light);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(255, 182, 193, 0.2);
+  transition: all 0.3s ease;
+  border-left: 5px solid var(--li-border-light);
+  animation: slideIn 0.5s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dark-mode li {
+  background: var(--li-bg-dark);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  border-left: 5px solid var(--li-border-dark);
+  color: white;
+}
+
+li:hover {
+  transform: translateX(10px);
+  box-shadow: 0 5px 15px rgba(255, 182, 193, 0.4);
+}
+
+.dark-mode li:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+li.completed {
+  background: var(--completed-bg-light);
+  text-decoration: line-through;
+  border-left: 5px solid #a9a9a9;
+  color: #666;
+}
+
+.dark-mode li.completed {
+  background: var(--completed-bg-dark);
+  color: #999;
+}
+
+.task-text {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.task-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.theme-toggle {
+  padding: 8px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark-mode .light-icon {
+  display: none;
+}
+
+.light-icon {
+  display: inline;
+}
+
+.dark-mode .dark-icon {
+  display: inline;
+}
+
+.dark-icon {
+  display: none;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
